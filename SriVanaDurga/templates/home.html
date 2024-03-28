@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <title>Sri Vana Durga</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-image: url("static/images/home2.avif");
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+      position: relative;
+      font-weight: bold;
+      background-color: rgba(255, 255, 255, 0.5);
+      height: 100vh;
+    }
+    .navbar {
+      overflow: hidden;
+      background-color: lightgray;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .navbar a {
+      display: block;
+      color: black;
+      text-align: center;
+      padding: 14px 20px;
+      text-decoration: none;
+    }
+    .logo-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-top: 22%;
+      position: relative;
+    }
+    .circular-logo {
+      width: 110px;
+      height: 110px;
+      background-color: none;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: absolute;
+      border: 2px solid black;
+    }
+    .surrounding-logo {
+      width: 50px;
+      height: 50px;
+      background-color: none;
+      position: absolute;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+    }
+    .surrounding-logo a {
+      color: inherit;
+      text-decoration: none;
+    }
+    .top {
+      top: -157px;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+    .bottom {
+      bottom: -157px;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+    .left {
+      top: 50%;
+      left: -120px;
+      transform: translateY(-50%);
+    }
+    .right {
+      top: 50%;
+      right: -120px;
+      transform: translateY(-50%);
+    }
+    .fa-cookie-bite { color: red; }
+    .fa-medkit { color: green; }
+    .fa-clipboard-list { color: blue; }
+    .fa-tasks { color: purple; }
+
+    @media only screen and (max-width: 600px) {
+      .logo-container {
+        flex-direction: column;
+        margin-top: 5%;
+      }
+      .circular-logo {
+        width: 80px;
+        height: 80px;
+      }
+      .surrounding-logo {
+        width: 30px;
+        height: 30px;
+        margin-bottom: 4px;
+      }
+      .top, .bottom, .left, .right {
+        position: relative;
+        top: auto;
+        left: auto;
+        transform: none;
+      }
+    }
+  </style>
+</head>
+<body>
+<div class="navbar">
+  <a href="{% url 'login' %}" class="active"><u>Login</u></a>
+</div>
+
+<div class="logo-container">
+  <div class="surrounding-logo top">
+    <a href="{% url 'login' %}">
+      <i class="fas fa-cookie-bite fa-3x fa-inverse"></i>
+      <span><br><br>Feed Records</span>
+    </a>
+  </div>
+  <div class="surrounding-logo bottom">
+    <a href="{% url 'login' %}">
+      <i class="fas fa-medkit fa-3x fa-inverse"></i>
+      <span><br><br>Medicine Records</span>
+    </a>
+  </div>
+  <div class="circular-logo">
+    <a href="{% url 'login' %}" style="text-decoration: none; color: inherit;">
+      <div class="center-text"><font style="color:white" size="6.8">SVD</font></div>
+    </a>
+    <div class="surrounding-logo left">
+      <a href="{% url 'login' %}">
+        <i class="fas fa-clipboard-list fa-3x fa-inverse"></i>
+        <span><br><br>Chicks Management</span>
+      </a>
+    </div>
+    <div class="surrounding-logo right">
+      <a href="{% url 'login' %}">
+        <i class="fas fa-tasks fa-3x fa-inverse"></i>
+        <span><br><br>Lifting Logs</span>
+      </a>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

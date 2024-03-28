@@ -1,0 +1,32 @@
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link type="text/css" rel="stylesheet" href="{% static 'css/loginstyle.css'  %}" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+<div class="navbar">
+  <a href="{% url 'login' %}" class="active"><u>Login</u></a>
+</div>
+<div>
+    {% for message in messages %}
+    <h4 style="margin-top: 150px;" align="center"><font color="red">{{ message }}</font></h4>
+    {% endfor %}
+</div>
+<div class="container">
+    <form method="post" action="{% url 'checkadminlogin' %}">
+      <span class="circle-icon"><i style="margin-top: 17px" class="fas fa-user"></i></span>
+      {% csrf_token %}
+      <input type="text" id="username" name="username" placeholder="Username"><br><br>
+      <input type="password" id="password" name="password" placeholder="Password"><br><br>
+      <input type="checkbox" id="remember" name="remember" value="remember">
+      <label for="remember">Remember me</label>
+      <a href="#">Forgot password?</a><br><br>
+      <button type="submit">LOGIN</button><br><br>
+    </form>
+  </div>
+</body>
+</html>

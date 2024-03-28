@@ -1,0 +1,209 @@
+    body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-image: url('/static/images/home2.avif');
+            background-size: cover;
+            position: relative;
+            font-weight: bold;
+            background-color: rgba(255, 255, 255, 0.5);
+        }
+
+        .navbar {
+            overflow: hidden;
+            margin-top: 0;
+            background-color: lightgray;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .navbar a {
+            display: block;
+            color: black;
+            text-align: center;
+            padding: 14px 20px;
+            text-decoration: none;
+        }
+
+    .container {
+      max-width: 300px;
+      margin: 50px auto;
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 20px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      text-align: center;
+      margin-top: 80px;
+    }
+
+    h1 {
+      display: none;
+    }
+
+    form {
+      margin-top: 20px;
+    }
+
+    label {
+      display: none;
+    }
+
+    .circle-icon {
+      display: inline-block;
+      width: 80px;
+      height: 80px;
+      line-height: 80px;
+      border-radius: 50%;
+      background-color: none;
+      color: black;
+      font-size: 40px;
+      margin-bottom: 25px;
+      border: 2px solid black;
+    }
+
+    input[type="text"],
+    input[type="password"] {
+      width: calc(100% - 30px);
+      padding: 10px;
+      margin-bottom: 15px;
+      border: 1px solid #ccc;
+      border-radius: 10px;
+      box-sizing: border-box;
+      padding-left: 10px;
+    }
+
+    input[type="password"] {
+      padding-right: 40px;
+    }
+
+    input[type="checkbox"] {
+      margin-right: 5px;
+      margin-left: 15px;
+      float: left;
+    }
+
+    button[type="submit"] {
+      width: 40%;
+      background-color: #007bff;
+      color: #fff;
+      border: none;
+      padding: 10px;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    button[type="submit"]:hover {
+      background-color: #0056b3;
+    }
+
+    a {
+      text-decoration: none;
+      color: #007bff;
+      float: right;
+      margin-right: 15px;
+    }
+        @media only screen and (max-width: 600px) {
+            body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-image: url('/static/images/home2.avif');
+            background-size: cover;
+            position: relative;
+            font-weight: bold;
+            background-color: rgba(255, 255, 255, 0.5);
+        }
+
+        .navbar {
+            overflow: hidden;
+            margin-top: 0;
+            background-color: lightgray;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .navbar a {
+            display: block;
+            color: black;
+            text-align: center;
+            padding: 14px 20px;
+            text-decoration: none;
+        }
+
+    .container {
+      max-width: 300px;
+      margin: 50px auto;
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 20px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      text-align: center;
+    }
+
+    h1 {
+      display: none;
+    }
+
+    form {
+      margin-top: 20px;
+    }
+
+    label {
+      display: none;
+    }
+
+    .circle-icon {
+      display: inline-block;
+      width: 80px;
+      height: 80px;
+      line-height: 80px;
+      border-radius: 50%;
+      background-color: none;
+      color: orange;
+      font-size: 40px;
+      margin-bottom: 25px;
+      border: 2px solid black;
+    }
+
+    input[type="text"],
+    input[type="password"] {
+      width: calc(100% - 30px);
+      padding: 10px;
+      margin-bottom: 15px;
+      border: 1px solid #ccc;
+      border-radius: 10px;
+      box-sizing: border-box;
+      padding-left: 10px;
+    }
+
+    input[type="password"] {
+      padding-right: 40px;
+    }
+
+    input[type="checkbox"] {
+      margin-right: 5px;
+      margin-left: 15px;
+      float: left;
+    }
+
+    button[type="submit"] {
+      width: 40%;
+      background-color: gray;
+      color: black;
+      border: none;
+      padding: 10px;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    a {
+      text-decoration: none;
+      color: #007bff;
+      float: right;
+      margin-right: 20px;
+    }
+ }

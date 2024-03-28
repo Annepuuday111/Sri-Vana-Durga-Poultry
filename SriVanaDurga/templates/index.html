@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  {% load static %}
+  <link type="text/css" rel="stylesheet" href="{% static 'css/indexstyle.css' %}" />
+  <title>Sri Vana Durga</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-size: cover;
+      background-color: rgba(255, 255, 255, 0.9);
+    }
+
+    .background-image {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: -1;
+    }
+
+    .navbar {
+      height: 100vh;
+      width: 250px;
+      background-color: lightgray;
+      position: fixed;
+      left: 0;
+      top: 0;
+      overflow-x: hidden;
+      padding-top: 20px;
+    }
+
+    .navbar a {
+      padding: 10px;
+      text-decoration: none;
+      font-size: 18px;
+      color: black;
+      display: block;
+      transition: 0.3s;
+    }
+
+    .navbar a:hover {
+      background-color: #555;
+    }
+
+    .logo {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .logo img {
+      border-radius: 50%;
+      width: 80px;
+      height: 80px;
+    }
+
+    .nav-links {
+      padding: 0;
+    }
+
+    .menu {
+      padding: 0;
+    }
+
+    .dropdown {
+      display: none;
+      padding-left: 20px;
+    }
+
+    .services:hover .dropdown {
+      display: block;
+    }
+
+    .dropdown li {
+      list-style-type: none;
+    }
+
+    .content {
+      margin-left: 250px;
+      padding: 16px;
+    }
+
+    @media screen and (max-width: 768px) {
+      .navbar {
+        width: 100%;
+        height: auto;
+        position: relative;
+      }
+
+      .navbar a {
+        font-size: 16px;
+      }
+
+      .navbar .dropdown {
+        display: none;
+        position: static;
+      }
+
+      .navbar .services:hover .dropdown {
+        display: none;
+      }
+
+      .content {
+        margin-left: 0;
+      }
+    }
+
+    .menu-bar {
+      background-color: lightgray;
+      padding: 10px 20px;
+    }
+
+    .menu-bar nav ul {
+      margin: 0;
+      padding: 0;
+      list-style-type: none;
+    }
+
+    .menu-bar nav ul li {
+      display: inline-block;
+    }
+
+    .menu-bar nav ul li a {
+      text-decoration: none;
+      color: black;
+      font-size: 24px;
+    }
+
+    @media screen and (min-width: 769px) {
+      .menu-bar {
+        display: none;
+      }
+    }
+  </style>
+</head>
+<body>
+<img class="background-image" src="{% static 'images/home.jpg' %}" alt="Background Image">
+<header class="menu-bar">
+  <nav>
+    <ul>
+      <li><a href="#" id="menu-toggle"><i class="fas fa-bars"></i></a></li>
+    </ul>
+  </nav>
+</header>
+<nav class="navbar">
+  <div class="logo">
+    <svg height="100" width="100">
+      <circle cx="50" cy="50" r="40" fill="#3498db" />
+      <text x="50" y="58" font-family="Arial, sans-serif" font-size="24" fill="white" text-anchor="middle">SVD</text>
+    </svg>
+  </div>
+  <ul class="nav-links">
+    <div class="menu">
+      <li class="services">
+        <a href="{% url 'index' %}"><i class="fas fa-home"></i> Home</a>
+      </li>
+      <li class="services">
+        <a href="#"><i class="fas fa-tasks"></i> Chicks Management </a>
+        <ul class="dropdown">
+          <li><a href="{% url 'addchicks' %}">Add Chicks</a></li>
+          <li><a href="{% url 'viewchicks' %}">View Chicks Records</a></li>
+          <li><a href="{% url 'addmortality' %}">Mortality</a></li>
+          <li><a href="{% url 'viewmortality' %}">View Total Mortality</a></li>
+        </ul>
+      </li>
+      <li class="services">
+        <a href="#"><i class="fas fa-cookie-bite"></i> Feed </a>
+        <ul class="dropdown">
+          <li><a href="{% url 'addfeed' %}">Add Feed</a></li>
+          <li><a href="{% url 'viewfeed' %}">Feed Records</a></li>
+        </ul>
+      </li>
+      <li class="services">
+        <a href="#"><i class="fas fa-medkit"></i> Medicine Records </a>
+        <ul class="dropdown">
+          <li><a href="{% url 'addmedicine' %}">Daily Medicine</a></li>
+          <li><a href="{% url 'addvaccine' %}">Vaccine</a></li>
+          <li><a href="{% url 'viewmedicine' %}">View Medicine's</a></li>
+        </ul>
+      </li>
+      <li class="services">
+        <a href="#"><i class="fas fa-clipboard-list"></i> Lifting Logs </a>
+        <ul class="dropdown">
+          <li><a href="{% url 'addlifting' %}">Add</a></li>
+          <li><a href="#">View</a></li>
+        </ul>
+      </li>
+      <li class="services">
+        <a href="{% url 'login' %}"><i class="fas fa-sign-out-alt"></i> Logout</a>
+      </li>
+    </div>
+  </ul>
+</nav>
+{% block content %}
+<div class="content">
+<!--    <h1>Sri VanaDurga Poultry</h1>-->
+</div>
+{% endblock %}
+  <script>
+  document.addEventListener('DOMContentLoaded', function () {
+
+    document.getElementById('menu-toggle').addEventListener('click', function() {
+      var navbar = document.querySelector('.navbar');
+      if (navbar.style.display === 'none' || navbar.style.display === '') {
+        navbar.style.display = 'block';
+      } else {
+        navbar.style.display = 'none';
+      }
+    });
+
+    var dropdowns = document.querySelectorAll('.services');
+
+    dropdowns.forEach(function (dropdown) {
+      dropdown.addEventListener('click', function (event) {
+        event.stopPropagation();
+        var currentDropdown = this.querySelector('.dropdown');
+        var isDisplayed = window.getComputedStyle(currentDropdown).getPropertyValue('display');
+        if (isDisplayed === 'none') {
+
+          document.querySelectorAll('.dropdown').forEach(function (dropdown) {
+            dropdown.style.display = 'none';
+          });
+
+          currentDropdown.style.display = 'block';
+        } else {
+          currentDropdown.style.display = 'none';
+        }
+      });
+    });
+
+    document.addEventListener('click', function (event) {
+      dropdowns.forEach(function (dropdown) {
+        dropdown.querySelector('.dropdown').style.display = 'none';
+      });
+    });
+  });
+</script>
+
+</body>
+</html>
