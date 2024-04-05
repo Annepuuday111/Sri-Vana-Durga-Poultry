@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+{% load static %}
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -48,7 +49,7 @@
       justify-content: center;
       align-items: center;
       position: absolute;
-      border: 2px solid black;
+      border: 2px solid none;
     }
     .surrounding-logo {
       width: 50px;
@@ -62,7 +63,7 @@
       text-align: center;
     }
     .surrounding-logo a {
-      color: inherit;
+      color: white;
       text-decoration: none;
     }
     .top {
@@ -91,26 +92,90 @@
     .fa-tasks { color: purple; }
 
     @media only screen and (max-width: 600px) {
-      .logo-container {
-        flex-direction: column;
-        margin-top: 5%;
-      }
-      .circular-logo {
-        width: 80px;
-        height: 80px;
-      }
-      .surrounding-logo {
-        width: 30px;
-        height: 30px;
-        margin-bottom: 4px;
-      }
-      .top, .bottom, .left, .right {
-        position: relative;
-        top: auto;
-        left: auto;
-        transform: none;
-      }
+  body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-image: url("static/images/home2.avif");
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+      position: relative;
+      font-weight: bold;
+      background-color: rgba(255, 255, 255, 0.5);
+      height: 100vh;
     }
+    .navbar {
+      overflow: hidden;
+      background-color: lightgray;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .navbar a {
+      display: block;
+      color: black;
+      text-align: center;
+      padding: 14px 20px;
+      text-decoration: none;
+    }
+    .logo-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-top: 90%;
+      position: relative;
+    }
+    .circular-logo {
+      width: 110px;
+      height: 110px;
+      background-color: none;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: absolute;
+      border: 2px solid none;
+    }
+    .surrounding-logo {
+      width: 50px;
+      height: 50px;
+      background-color: none;
+      position: absolute;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+    }
+    .surrounding-logo a {
+      color: white;
+      text-decoration: none;
+    }
+    .top {
+      top: -157px;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+    .bottom {
+      bottom: -157px;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+    .left {
+      top: 50%;
+      left: -120px;
+      transform: translateY(-50%);
+    }
+    .right {
+      top: 50%;
+      right: -120px;
+      transform: translateY(-50%);
+    }
+    .fa-cookie-bite { color: red; }
+    .fa-medkit { color: green; }
+    .fa-clipboard-list { color: blue; }
+    .fa-tasks { color: purple; }}
+
   </style>
 </head>
 <body>
@@ -133,7 +198,8 @@
   </div>
   <div class="circular-logo">
     <a href="{% url 'login' %}" style="text-decoration: none; color: inherit;">
-      <div class="center-text"><font style="color:white" size="6.8">SVD</font></div>
+<!--      <div class="center-text"><font style="color:white" size="6.8">SVD</font></div>-->
+      <img src="{% static 'images/logo1.png' %}" alt="logo" style="width: 110px;margin-top:4px; height: 110px; border-radius: 100%;">
     </a>
     <div class="surrounding-logo left">
       <a href="{% url 'login' %}">

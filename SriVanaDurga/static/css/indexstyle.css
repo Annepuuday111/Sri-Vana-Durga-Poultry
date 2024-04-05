@@ -49,6 +49,8 @@ body {
       border-radius: 50%;
       width: 80px;
       height: 80px;
+      align: center;
+      margin-right: 10px;
     }
 
     .nav-links {

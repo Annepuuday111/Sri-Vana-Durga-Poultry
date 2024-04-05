@@ -151,9 +151,10 @@
 </header>
 <nav class="navbar">
   <div class="logo">
-    <svg height="100" width="100">
-      <circle cx="50" cy="50" r="40" fill="#3498db" />
-      <text x="50" y="58" font-family="Arial, sans-serif" font-size="24" fill="white" text-anchor="middle">SVD</text>
+    <svg height="100" width="-100" style="margin-right: 10px;">
+<!--      <circle cx="50" cy="50" r="40" fill="#3498db" />-->
+<!--      <text x="50" y="58" font-family="Arial, sans-serif" font-size="24" fill="white" text-anchor="middle">SVD</text>-->
+      <img src="{% static 'images/logo1.png' %}" alt="logo" style="width: 100px; height: 100px; border-radius: 50%;">
     </svg>
   </div>
   <ul class="nav-links">
@@ -165,9 +166,9 @@
         <a href="#"><i class="fas fa-tasks"></i> Chicks Management </a>
         <ul class="dropdown">
           <li><a href="{% url 'addchicks' %}">Add Chicks</a></li>
-          <li><a href="{% url 'viewchicks' %}">View Chicks Records</a></li>
+          <li><a href="{% url 'viewchicks' %}"> Chicks Records</a></li>
           <li><a href="{% url 'addmortality' %}">Mortality</a></li>
-          <li><a href="{% url 'viewmortality' %}">View Total Mortality</a></li>
+          <li><a href="{% url 'viewmortality' %}"> Total Mortality</a></li>
         </ul>
       </li>
       <li class="services">
@@ -182,7 +183,7 @@
         <ul class="dropdown">
           <li><a href="{% url 'addmedicine' %}">Daily Medicine</a></li>
           <li><a href="{% url 'addvaccine' %}">Vaccine</a></li>
-          <li><a href="{% url 'viewmedicine' %}">View Medicine's</a></li>
+          <li><a href="{% url 'viewmedicine' %}"> Medicine's Records</a></li>
         </ul>
       </li>
       <li class="services">
