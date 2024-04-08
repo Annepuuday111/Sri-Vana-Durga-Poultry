@@ -1,267 +1,235 @@
 {% extends 'index.html' %}
-
 {% block content %}
 <style>
-    body {
-        font-family: Arial, sans-serif;
-        background-color: #f4f4f4;
-        margin: 0;
-        padding: 20px;
-    }
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 20px;
+        }
 
-    h2 {
-        color: white;
-        text-align: center;
-    }
+        h1 {
+            color: white;
+            margin-top: 2%;
+            margin-left: 10%;
+        }
 
-    form {
-        background-color: #fff;
-        padding: 20px;
-        border-radius: 5px;
-        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-        max-width: 800px;
-        margin: 0 auto;
-        overflow-x: auto;
-    }
+        input[type="text"],
+        input[type="number"],
+        input[type="datetime-local"] {
+            width: calc(100% - 20px);
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
 
-    label {
-        display: block;
+        button[type="submit"] {
+            background-color: #4caf50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            margin: 0 auto;
+            display: block;
+        }
+
+        button[type="submit"]:hover {
+            background-color: #45a049;
+        }
+
+        form {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+            margin-left: 35%;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            color: #333;
+            text-align: left;
+        }
+
+        .box {
+        background-color: lightblue;
+        padding: 12px;
         margin-bottom: 5px;
-        color: #333;
-        text-align: left;
-    }
+        margin-top: 5px;
+        width: 250px;
+        border-radius: 2px;
+        }
 
-    input[type="text"],
-    input[type="number"],
-    input[type="date"] {
-        width: calc(100% - 16px);
-        padding: 8px;
-        margin-bottom: 15px;
-        border: 1px solid #ccc;
-        border-radius: 5px;
-        box-sizing: border-box;
-    }
+        .button-container {
+            text-align: center;
+            margin-top: 20px;
+        }
 
-    .boxColumn {
-        display: inline-block;
-        width: calc(20% - 10px);
-        margin-right: 20px;
-        vertical-align: top;
-    }
+        #totals-container {
+            display: flex;
+            justify-content: space-around;
+            margin-bottom: 20px;
+            margin-right: 20px;
+            border: 3px solid red;
+            padding: 10px;
+            border-radius: 5px;
+            text-align: center;
+        }
 
-    .box {
-        background-color: #f9f9f9;
-        padding: 10px;
-        margin-bottom: 20px;
-        border-radius: 5px;
-    }
+    @media only screen and (max-width: 600px) {
+        form {
+            max-width: 400px;
+            margin: 0 auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+            margin-left: 5%;
+            margin-right: 5%;
+            margin-bottom: 5%;
+        }
 
-    .box h3 {
-        margin-top: 0;
-        color: #333;
-    }
+        h1 {
+            color: white;
+            margin-top: 5%;
+            margin-left: 10%;
+        }
+
+        input[type="text"],
+        input[type="number"],
+        input[type="datetime-local"] {
+            width: calc(100% - 20px);
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+
+        button[type="submit"] {
+            background-color: #4caf50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            margin: 0 auto;
+            display: block;
+        }
+
+        button[type="submit"]:hover {
+            background-color: #45a049;
+        }
+
+        .box {
+            background-color: lightblue;
+            padding: 12px;
+            width: 115px;
+            margin-bottom: 5px;
+            margin-top: 5px;
+            border-radius: 2px;
+        }
 
     .button-container {
         text-align: center;
         margin-top: 20px;
     }
 
-    button[type="submit"], button[type="button"] {
-        background-color: #4CAF50;
-        color: white;
-        padding: 10px 20px;
-        border: none;
-        border-radius: 5px;
-        cursor: pointer;
-        transition: background-color 0.3s;
-        margin: 0 10px;
-    }
-
-    button[type="submit"]:hover, button[type="button"]:hover {
-        background-color: #45a049;
-    }
-
-    @media screen and (max-width: 600px) {
-        .boxColumn {
-            width: 100%;
-            margin-right: 0;
+    #totals-container {
+            display: flex;
+            justify-content: space-around;
             margin-bottom: 20px;
+            margin-right: 20px;
+            border: 3px solid red;
+            padding: 10px;
+            border-radius: 5px;
+            text-align: center;
         }
-    }
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-      background-size: cover;
-      background-color: rgba(255, 255, 255, 0.9);
-    }
 
-    .background-image {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      position: fixed;
-      top: 0;
-      left: 0;
-      z-index: -1;
-    }
-
-    .navbar {
-      height: 100vh;
-      width: 250px;
-      background-color: lightgray;
-      position: fixed;
-      left: 0;
-      top: 0;
-      overflow-x: hidden;
-      padding-top: 20px;
-    }
-
-    .navbar a {
-      padding: 10px;
-      text-decoration: none;
-      font-size: 18px;
-      color: black;
-      display: block;
-      transition: 0.3s;
-    }
-
-    .navbar a:hover {
-      background-color: #555;
-    }
-
-    .logo {
-      text-align: center;
-      margin-bottom: 20px;
-    }
-
-    .logo img {
-      border-radius: 50%;
-      width: 80px;
-      height: 80px;
-    }
-
-    .nav-links {
-      padding: 0;
-    }
-
-    .menu {
-      padding: 0;
-    }
-
-    .dropdown {
-      display: none;
-      padding-left: 20px;
-    }
-
-    .services:hover .dropdown {
-      display: block;
-    }
-
-    .dropdown li {
-      list-style-type: none;
-    }
-
-    .content {
-      margin-left: 250px;
-      padding: 16px;
-    }
-
-    @media screen and (max-width: 768px) {
-      .navbar {
-        width: 100%;
-        height: auto;
-        position: relative;
-      }
-
-      .navbar a {
-        font-size: 16px;
-      }
-
-      .navbar .dropdown {
-        display: none;
-        position: static;
-      }
-
-      .navbar .services:hover .dropdown {
-        display: none;
-      }
-
-      .content {
-        margin-left: 0;
-      }
-    }
-
-    .menu-bar {
-      background-color: lightgray;
-      padding: 10px 20px;
-    }
-
-    .menu-bar nav ul {
-      margin: 0;
-      padding: 0;
-      list-style-type: none;
-    }
-
-    .menu-bar nav ul li {
-      display: inline-block;
-    }
-
-    .menu-bar nav ul li a {
-      text-decoration: none;
-      color: black;
-      font-size: 24px;
-    }
-
-    @media screen and (min-width: 769px) {
-      .menu-bar {
-        display: none;
-      }
     }
 </style>
 
-<h2>Add Lifting</h2>
+<h1 align="center">Add Lifting</h1>
 <form method="post">
     {% csrf_token %}
     {{ form.as_p }}
+
+    <div id="totals-container">
+            <div class="box total-birds">
+                <h3>Total Birds</h3>
+                <p id="totalBirdsCount">0</p>
+            </div>
+
+            <div class="box total-weight">
+                <h3>Total Weight</h3>
+                <p id="totalWeightCount">0</p>
+            </div>
+        </div>
+    <div id="boxCreation">
+        <label for="numBoxes">Number of Boxes:</label>
+        <input type="text" id="numBoxes" name="numBoxes" min="1" oninput="generateBoxes()">
+    </div>
+
     <div id="boxContainer"></div>
+
     <div class="button-container">
-        <button type="button" onclick="generateBoxes()">Set</button>
         <button type="submit">Submit</button>
     </div>
 </form>
 
 <script>
     function generateBoxes() {
-        var numCages = document.getElementById("id_num_cages").value;
+        var numBoxes = document.getElementById("numBoxes").value;
         var boxContainer = document.getElementById("boxContainer");
+
         boxContainer.innerHTML = '';
 
-        var numColumns = Math.ceil(numCages / 5);
-        var cagesLeft = numCages;
-        var serialNumber = 1;
+        for (var i = 1; i <= numBoxes; i++) {
+            var box = document.createElement("div");
+            box.className = "box";
+            box.innerHTML = `
+                <h3>Box ${i}</h3>
+                <label for="boxNumBirds${i}">Number of Birds:</label>
+                <input type="number" id="boxNumBirds${i}" name="boxNumBirds${i}" oninput="updateTotals()"><br>
+                <label for="boxWeight${i}">Weight:</label>
+                <input type="number" id="boxWeight${i}" name="boxWeight${i}" oninput="updateTotals()"><br>
+            `;
+            boxContainer.appendChild(box);
+        }
 
-        for (var i = 0; i < numColumns; i++) {
-            var column = document.createElement("div");
-            column.className = "boxColumn";
+        updateTotals();
+    }
 
-            for (var j = 0; j < 5 && cagesLeft > 0; j++) {
-                var box = document.createElement("div");
-                box.className = "box";
-                box.innerHTML = `
-                    <h3>Box ${serialNumber}</h3>
-                    <label for="boxNumBirds${serialNumber}">Number of Birds:</label>
-                    <input type="number" id="boxNumBirds${serialNumber}" name="boxNumBirds${serialNumber}"><br>
-                    <label for="boxWeight${serialNumber}">Weight:</label>
-                    <input type="number" id="boxWeight${serialNumber}" name="boxWeight${serialNumber}"><br>
-                `;
-                column.appendChild(box);
-                cagesLeft--;
-                serialNumber++;
+    function updateTotals() {
+        var totalBirdsCount = 0;
+        var totalWeightCount = 0;
+        var numBoxes = document.getElementById("numBoxes").value;
+
+        for (var i = 1; i <= numBoxes; i++) {
+            var numBirdsInput = document.getElementById("boxNumBirds" + i);
+            var weightInput = document.getElementById("boxWeight" + i);
+
+            if (numBirdsInput && numBirdsInput.value !== "") {
+                totalBirdsCount += parseInt(numBirdsInput.value);
             }
 
-            boxContainer.appendChild(column);
+            if (weightInput && weightInput.value !== "") {
+                totalWeightCount += parseInt(weightInput.value);
+            }
         }
+
+        document.getElementById("totalBirdsCount").innerText = totalBirdsCount;
+        document.getElementById("totalWeightCount").innerText = totalWeightCount;
     }
 </script>
+
 {% endblock %}

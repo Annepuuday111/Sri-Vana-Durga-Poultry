@@ -59,15 +59,11 @@ class AddVaccine(models.Model):
         db_table = 'addvaccine_table'
 
 class AddLifting(models.Model):
-    date = models.DateField()
-    customer_name = models.CharField(max_length=100)
-    branch = models.CharField(max_length=100)
-    customer_code = models.CharField(max_length=50)
-    farm_code = models.CharField(max_length=50)
-    vehicle_no = models.CharField(max_length=20)
-    driver_name = models.CharField(max_length=100)
-    num_birds = models.IntegerField()
-    num_cages = models.IntegerField()
+    Date = models.DateField()
+    Customer_Name = models.CharField(max_length=100)
+    Customer_Code = models.CharField(max_length=50)
+    Driver_Name = models.CharField(max_length=100)
+    Vehicle_No = models.CharField(max_length=20)
 
     class Meta:
         db_table = 'addlifting_table'

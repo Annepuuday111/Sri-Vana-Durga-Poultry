@@ -3,7 +3,7 @@ from django.http import HttpResponse
 from django.contrib import messages
 from django.contrib.auth import authenticate, login as auth_login
 from .forms import AddChicksForm, AddMortalityForm, AddFeedForm, AddMedicineForm, AddVaccineForm, AddLiftingForm
-from .models import AddChicks, AddMortality, AddFeed, AddMedicine, AddVaccine
+from .models import AddChicks, AddMortality, AddFeed, AddMedicine, AddVaccine, AddLifting
 
 def index(request):
     return render(request, 'index.html')
@@ -103,3 +103,11 @@ def viewmedicine(request):
     medicine_records = AddMedicine.objects.all()
     vaccine_records = AddVaccine.objects.all()
     return render(request, 'viewmedicine.html', {'medicine_records': medicine_records, 'vaccine_records': vaccine_records})
+
+def viewlifting(request):
+    lifting_records = AddLifting.objects.all()
+    return render(request, 'viewlifting.html', {'lifting_records': lifting_records})
+
+def box_wise_data(request):
+    box_wise_records = AddLifting.objects.all()
+    return render(request, 'box_wise_data.html', {'box_wise_records': box_wise_records})
