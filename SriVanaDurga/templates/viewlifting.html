@@ -203,6 +203,9 @@
             <th>Customer Name</th>
             <th>Driver Name</th>
             <th>Vehicle No</th>
+            <th>Total Boxes</th>
+            <th>Total Birds</th>
+            <th>Total Weight</th>
             <th>Action</th>
         </tr>
     </thead>
@@ -213,7 +216,10 @@
             <td>{{ record.Customer_Name }}</td>
             <td>{{ record.Driver_Name }}</td>
             <td>{{ record.Vehicle_No }}</td>
-            <td><a href="box_wise_data.html" class="button">Box Wise Data</a></td>
+            <td>{{ record.box_count }}</td>
+            <td>{{ record.total_birds }}</td>
+            <td>{{ record.total_weight }}</td>
+            <td><a href="{% url 'box_wise_data' %}" class="button">Box Wise Data</a></td>
         </tr>
         {% endfor %}
     </tbody>

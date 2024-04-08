@@ -64,7 +64,7 @@
         padding: 12px;
         margin-bottom: 5px;
         margin-top: 5px;
-        width: 250px;
+        width: 93%;
         border-radius: 2px;
         }
 
@@ -82,6 +82,11 @@
             padding: 10px;
             border-radius: 5px;
             text-align: center;
+        }
+
+        .total-birds,
+        .total-weight {
+            flex-basis: 45%;
         }
 
     @media only screen and (max-width: 600px) {
@@ -131,19 +136,18 @@
         }
 
         .box {
-            background-color: lightblue;
-            padding: 12px;
-            width: 115px;
-            margin-bottom: 5px;
-            margin-top: 5px;
-            border-radius: 2px;
+        background-color: lightblue;
+        padding: 12px;
+        margin-bottom: 5px;
+        margin-top: 5px;
+        width: 87%;
+        border-radius: 2px;
         }
 
     .button-container {
         text-align: center;
         margin-top: 20px;
     }
-
     #totals-container {
             display: flex;
             justify-content: space-around;
@@ -154,6 +158,11 @@
             border-radius: 5px;
             text-align: center;
         }
+
+    .total-birds,
+    .total-weight {
+            flex-basis: 40%;
+    }
 
     }
 </style>
@@ -171,9 +180,9 @@
 
             <div class="box total-weight">
                 <h3>Total Weight</h3>
-                <p id="totalWeightCount">0</p>
+                <p id="totalWeightCount">0.00</p>
             </div>
-        </div>
+    </div>
     <div id="boxCreation">
         <label for="numBoxes">Number of Boxes:</label>
         <input type="text" id="numBoxes" name="numBoxes" min="1" oninput="generateBoxes()">
@@ -211,7 +220,7 @@
 
     function updateTotals() {
         var totalBirdsCount = 0;
-        var totalWeightCount = 0;
+        var totalWeightCount = 0.00;
         var numBoxes = document.getElementById("numBoxes").value;
 
         for (var i = 1; i <= numBoxes; i++) {
@@ -223,12 +232,12 @@
             }
 
             if (weightInput && weightInput.value !== "") {
-                totalWeightCount += parseInt(weightInput.value);
+                totalWeightCount += parseFloat(weightInput.value);
             }
         }
 
         document.getElementById("totalBirdsCount").innerText = totalBirdsCount;
-        document.getElementById("totalWeightCount").innerText = totalWeightCount;
+        document.getElementById("totalWeightCount").innerText = totalWeightCount.toFixed(2);
     }
 </script>
 

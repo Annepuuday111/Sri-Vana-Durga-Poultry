@@ -64,6 +64,9 @@ class AddLifting(models.Model):
     Customer_Code = models.CharField(max_length=50)
     Driver_Name = models.CharField(max_length=100)
     Vehicle_No = models.CharField(max_length=20)
+    box_count = models.IntegerField(default=0)
+    total_weight = models.DecimalField(max_digits=10, decimal_places=2, default=0)
+    total_birds = models.IntegerField(default=0)
 
     class Meta:
         db_table = 'addlifting_table'

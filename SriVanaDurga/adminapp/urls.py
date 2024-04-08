@@ -21,5 +21,5 @@ urlpatterns = [
     path('viewmortality/', views.viewmortality, name='viewmortality'),
     path('viewmedicine/', views.viewmedicine, name='viewmedicine'),
     path('viewlifting/', views.viewlifting, name='viewlifting'),
-    path('box_wise_data', views.box_wise_data, name='box_wise_data'),
+    path('viewlifting/box_wise_data/', views.box_wise_data, name='box_wise_data'),
 ]

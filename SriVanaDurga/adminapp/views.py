@@ -81,7 +81,23 @@ def addlifting(request):
     if request.method == 'POST':
         form = AddLiftingForm(request.POST)
         if form.is_valid():
-            form.save()
+            instance = form.save(commit=False)
+
+            total_birds = 0
+            total_weight = 0
+            box_count = instance.box_count
+
+            for i in range(1, box_count + 1):
+                num_birds = request.POST.get(f'boxNumBirds{i}')
+                weight = request.POST.get(f'boxWeight{i}')
+                if num_birds and weight:
+                    total_birds += int(num_birds)
+                    total_weight += int(weight)
+
+            instance.total_birds = total_birds
+            instance.total_weight = total_weight
+
+            instance.save()
             return HttpResponse("Lifting Record Added Successfully")
     else:
         form = AddLiftingForm()
