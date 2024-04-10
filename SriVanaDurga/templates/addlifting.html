@@ -191,11 +191,29 @@
     <div id="boxContainer"></div>
 
     <div class="button-container">
-        <button type="submit">Submit</button>
+        <button type="submit"  onclick="return assignBoxWithValue()">Submit</button>
     </div>
 </form>
 
 <script>
+    function assignBoxWithValue(){
+    var resString = "";
+        var totalBirdsCount = 0;
+        var totalWeightCount = 0.00;
+        var numBoxes = document.getElementById("numBoxes").value;
+
+        for (var i = 1; i <= numBoxes; i++) {
+            var numBirdsInput = document.getElementById("boxNumBirds" + i);
+            var weightInput = document.getElementById("boxWeight" + i);
+            if(i==1)
+                resString = i + "_" + numBirdsInput.value + "_" + weightInput.value;
+                else
+                  resString +=","+ i + "_" + numBirdsInput.value + "_" + weightInput.value;
+    }
+
+        alert('test ' + resString)
+        return true;
+    }
     function generateBoxes() {
         var numBoxes = document.getElementById("numBoxes").value;
         var boxContainer = document.getElementById("boxContainer");

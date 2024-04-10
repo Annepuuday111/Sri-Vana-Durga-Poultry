@@ -29,7 +29,7 @@ class AddVaccineForm(forms.ModelForm):
 class AddLiftingForm(forms.ModelForm):
     class Meta:
         model = AddLifting
-        exclude = ['box_count', 'total_weight', 'total_birds']
+        exclude = ['box_count', 'total_weight', 'total_birds', 'box_data', 'box_number', 'birds', 'weight']
 
     def __init__(self, *args, **kwargs):
         super(AddLiftingForm, self).__init__(*args, **kwargs)

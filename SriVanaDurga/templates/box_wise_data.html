@@ -56,12 +56,12 @@
         border: 3px solid red;
         padding: 10px;
         border-radius: 5px;
-        max-width: 750px;
+        width: 95%;
         margin: 20px auto;
     }
 
     .total-container p {
-        margin: 0;
+        color: red;
     }
 
     .total-container .total-weight,
@@ -97,6 +97,25 @@
         max-width: 750px;
         margin: 20px auto;
     }
+    .total-container {
+        display: flex;
+        justify-content: space-around;
+        background-color: lightblue;
+        border: 3px solid red;
+        padding: 10px;
+        border-radius: 5px;
+        width: 92%;
+        margin: 20px auto;
+    }
+
+    .total-container p {
+        color: red;
+    }
+
+    .total-container .total-weight,
+    .total-container .total-birds {
+        margin: 10px;
+    }
 </style>
 <h2>Box Wise Records</h2>
 <form method="post">
@@ -120,27 +139,31 @@
     </table>
 
     <table>
-        <thead>
-            <tr>
-                <th style="width: 45px;">Box Number</th>
-                <th style="width: 45px;">Weight</th>
-            </tr>
-        </thead>
-        <tbody>
-            {% for box in box_wise_data %}
-            <tr>
-                <td>{{ box.box_number }}</td>
-                <td>{{ box.weight }}</td>
-            </tr>
-            {% endfor %}
-        </tbody>
-    </table>
+    <thead>
+        <tr>
+            <th style="width: 45px;">Box Number</th>
+            <th style="width: 45px;">Birds</th>
+            <th style="width: 45px;">Weight</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for record in box_wise_records %}
+        <tr>
+            <td>{{ record.box_data|cut:"_"|first }}</td>
+            <td>{{ record.box_data|cut:"_"|slice:"1:2" }}</td>
+            <td>{{ record.box_data|cut:"_"|slice:"2:" }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
 
-    <div class="total-container">
-        <p>Total Weight: {{ total_weight }}</p>
-        <p>Total Birds: {{ total_birds }}</p>
-    </div>
 
-    <button type="submit" class="button">Submit</button>
+   <div class="total-container">
+       <p><strong>Total Birds:</strong> {{ total_birds }}</p>
+       <p><strong>Total Weight:</strong> {{ total_weight }}</p>
+   </div>
+
+
+    <button type="submit" class="button">Download PDF </button>
 </form>
 {% endblock %}

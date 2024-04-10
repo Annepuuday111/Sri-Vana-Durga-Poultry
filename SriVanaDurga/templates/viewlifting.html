@@ -8,9 +8,10 @@
         padding: 20px;
     }
 
-    h2 {
+    h1 {
         color: white;
         text-align: center;
+        margin-left: 10%;
     }
 
     table {
@@ -46,9 +47,15 @@
     @media only screen and (max-width: 600px) {
         table {
             width: 100%;
-            margin-left: 1px;
-            margin-right: 2px;
+            margin-left: 7px;
+            margin-right: 7px;
         }
+
+        h1 {
+        color: white;
+        text-align: center;
+        margin-left: 30%;
+    }
 
     }
     body {
@@ -68,6 +75,7 @@
       left: 0;
       z-index: -1;
     }
+
 
     .navbar {
       height: 100vh;
@@ -132,7 +140,7 @@
 
     @media screen and (max-width: 768px) {
       .navbar {
-        width: 138%;
+        width: 147%;
         height: auto;
         position: relative;
       }
@@ -158,7 +166,7 @@
     .menu-bar {
       background-color: lightgray;
       padding: 10px 20px;
-      width: 128%;
+      width: 138%;
     }
 
     .menu-bar nav ul {
@@ -195,7 +203,7 @@
     }
 </style>
 
-<h2> Lifting Records</h2>
+<h1> Lifting Records</h1>
 <table id="feedTable">
     <thead>
         <tr>
@@ -219,7 +227,7 @@
             <td>{{ record.box_count }}</td>
             <td>{{ record.total_birds }}</td>
             <td>{{ record.total_weight }}</td>
-            <td><a href="{% url 'box_wise_data' %}" class="button">Box Wise Data</a></td>
+            <td><a href="{% url 'box_wise_data' id=record.id %}" class="button">Box Wise Data</a></td>
         </tr>
         {% endfor %}
     </tbody>

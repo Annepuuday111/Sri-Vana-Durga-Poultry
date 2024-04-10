@@ -67,6 +67,11 @@ class AddLifting(models.Model):
     box_count = models.IntegerField(default=0)
     total_weight = models.DecimalField(max_digits=10, decimal_places=2, default=0)
     total_birds = models.IntegerField(default=0)
+    box_data = models.CharField(max_length=400,default="0_0_0")
+    box_number = models.IntegerField(default=0)
+    birds = models.IntegerField(default=0)
+    weight = models.DecimalField(max_digits=10, decimal_places=2, default=0)
+
 
     class Meta:
         db_table = 'addlifting_table'
