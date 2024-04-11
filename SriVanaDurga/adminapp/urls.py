@@ -22,4 +22,5 @@ urlpatterns = [
     path('viewmedicine/', views.viewmedicine, name='viewmedicine'),
     path('viewlifting/', views.viewlifting, name='viewlifting'),
     path('viewlifting/box_wise_data/<int:id>/', views.box_wise_data, name='box_wise_data'),
+    path('download-pdf/<int:id>/', views.download_pdf, name='download_pdf'),
 ]

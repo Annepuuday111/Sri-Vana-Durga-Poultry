@@ -193,6 +193,7 @@
     <div class="button-container">
         <button type="submit"  onclick="return assignBoxWithValue()">Submit</button>
     </div>
+    <input type="hidden" id="hiddenTextBox" name="hiddenTextBox">
 </form>
 
 <script>
@@ -210,8 +211,9 @@
                 else
                   resString +=","+ i + "_" + numBirdsInput.value + "_" + weightInput.value;
     }
-
+    //save this value to DB
         alert('test ' + resString)
+        document.getElementById("hiddenTextBox").value  = resString;
         return true;
     }
     function generateBoxes() {
